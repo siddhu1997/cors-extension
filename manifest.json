@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "CORS Jugaad",
+    "version": "1.0",
+    "description": "Allows CORS by modifying response headers",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "icons/icon.png",
+            "48": "icons/icon.png",
+            "128": "icons/icon.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon.png",
+        "48": "icons/icon.png",
+        "128": "icons/icon.png"
+    },
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "cors_rules",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    }
+}
